@@ -6,6 +6,11 @@ Base docker images for codio backend
 
 Draft documentation:
 
+## Build base Image
+``` bash
+sudo docker build -t base .
+```
+
 ## Container create
 2 folders for mount should be used
 
