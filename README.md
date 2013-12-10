@@ -23,5 +23,9 @@ mkdir -p <project_home_dir>/workspace
 sudo docker run -v <project_home_dir>:/home/codio:rw -v <project_files_dir>:/home/codio/workspace:rw -d base:latest /sbin/init
 ```
 
+## Startup services
+By default only ssh will be started, to start other services file /usr/sbin/codio-start should be mounted to file system. file must have 700 rights and root as owner.
+
+
 ## SSH connection
-хз пока как сделать
+listen on 22 port, map it to host machine to provide user access to ssh from outside
