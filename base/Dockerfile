@@ -2,7 +2,7 @@
 FROM ubuntu:12.04
 MAINTAINER Codio "info@codio.com"
 
-# fix deps for node
+# fix deps from universe
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe" > /etc/apt/sources.list.d/universe.list
 
 
@@ -16,7 +16,7 @@ RUN apt-get -y update
 RUN apt-get -y install git
 
 # extra packages
-#RUN apt-get -y install emacs zsh
+RUN apt-get -y install emacs
 
 # Create a user
 RUN adduser codio --disabled-password
@@ -27,5 +27,6 @@ RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start
 
 # Clean unwanted software
 RUN apt-get -y purge python-software-properties
+RUN apt-get -y autoremove
 
 CMD ["/sbin/init"]
