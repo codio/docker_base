@@ -28,5 +28,7 @@ RUN gem install --no-rdoc --no-ri sass
 # Clean unwanted software
 RUN apt-get -y purge python-software-properties
 RUN apt-get -y autoremove
+
+# environment variables
 ENV HOME /home/codio
 ENV PATH /usr/share/rpc:$PATH

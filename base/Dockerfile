@@ -36,6 +36,8 @@ RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start
 # Clean unwanted software
 RUN apt-get -y purge python-software-properties
 RUN apt-get -y autoremove
+
+# environment variables
 ENV HOME /home/codio
 
 CMD ["/sbin/init"]
