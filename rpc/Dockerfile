@@ -12,6 +12,7 @@ RUN apt-get -y install dialog curl wget man vim nano python-software-properties 
 # ppas
 RUN apt-add-repository -y ppa:git-core/ppa
 RUN apt-add-repository -y ppa:chris-lea/node.js
+RUN add-apt-repository -y ppa:brightbox/ruby-ng-experimental
 RUN apt-get -y update
 RUN apt-get -y install git nodejs ruby2.0 ruby2.0-dev mercurial
 
@@ -28,3 +29,4 @@ RUN gem install --no-rdoc --no-ri sass
 RUN apt-get -y purge python-software-properties
 RUN apt-get -y autoremove
 ENV HOME /home/codio
+ENV PATH /usr/share/rpc:$PATH
