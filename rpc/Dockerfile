@@ -12,8 +12,6 @@ RUN apt-get -y install curl wget man vim nano python-software-properties build-e
 # ppas
 RUN apt-add-repository -y ppa:git-core/ppa
 RUN apt-add-repository -y ppa:chris-lea/node.js
-RUN apt-add-repository -y ppa:brightbox/ruby-ng-experimental
-
 RUN apt-get -y update
 RUN apt-get -y install git nodejs ruby2.0 ruby2.0-dev mercurial
 
