@@ -7,9 +7,11 @@ nvm install 0.10
 nvm use 0.10
 
 #ruby with rbenv install
-
-
-# nginx/apache support
-
-
-# databases support
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+export PATH="$HOME/.rbenv/bin:$PATH"
+rbenv init -
+rbenv install 2.0.0-p353
+rbenv global 2.0.0-p353
