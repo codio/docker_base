@@ -19,19 +19,12 @@ sudo docker build -t base .
 
 check "Disk quota" section to see action for set quota
 
-## Docker start command example
-``` bash
-mkdir -p <project_home_dir>/workspace
-sudo docker run -v <project_home_dir>:/home/codio:rw -v <project_files_dir>:/home/codio/workspace:rw -d base:latest /sbin/init
-```
-better create workspace folder in base image
-
 ## Startup services
 By default only ssh will be started, to start other services file /usr/sbin/codio-start should be mounted to file system. file must have 700 rights and root as owner.
 
 
 ## SSH connection
-listen on 22 port, map it to host machine to provide user access to ssh from outside
+listen on 22 port
 
 ## CPU && memory quota
 see docker desc
@@ -52,4 +45,6 @@ sudo mount -t aufs -o dirs=<user_home_dir>:<base_home_dir> none <result_home_dir
 
 ## docker startup script
 sudo mount -t aufs -o dirs=<user_home_dir>:<base_home_dir> none <result_home_dir>
-sudo docker run -v <project_home_dir>:/home/codio:rw -v <project_files_dir>:/home/codio/workspace:rw -d base:latest /sbin/init
+sudo docker run -v <result_home_dir>:/home/codio:rw -v <project_files_dir>:/home/codio/workspace:rw -d base:latest /sbin/init
+
+Home directory is pointed to /home/codio
