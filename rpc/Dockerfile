@@ -24,7 +24,7 @@ RUN npm install -g jitsu@0.13.3
 RUN npm install -g snr@0.2.2
 RUN npm install -g less@1.4.0
 RUN gem install --no-rdoc --no-ri sass
-ADD ../base/etc/default/gitconfig /etc/gitconfig
+ADD ./etc/default/gitconfig /etc/gitconfig
 
 # Clean unwanted software
 RUN apt-get -y purge python-software-properties
