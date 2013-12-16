@@ -30,6 +30,7 @@ ADD ./codio-start /usr/sbin/codio-start
 ADD ./etc/nginx/nginx.conf /etc/nginx/nginx.conf
 ADD ./etc/mongodb.conf /etc/mongodb.conf
 ADD ./etc/default/mongodb /etc/default/mongodb
+ADD ./etc/default/gitconfig /etc/gitconfig
 
 RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start
 
