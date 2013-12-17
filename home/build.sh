@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUN="sudo docker run -u codio -w /home/codio -v `pwd`/image:/home/codio:rw -i -t base"
+RUN="sudo docker run -rm -u codio -w /home/codio -v `pwd`/image:/home/codio:rw -i -t base"
 
 rm -rf ./image
 mkdir -p ./image
