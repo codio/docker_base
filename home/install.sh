@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # node by nvm install
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh

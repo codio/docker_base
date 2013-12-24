@@ -22,6 +22,11 @@ RUN apt-get -y install git nginx mongodb-10gen
 # extra packages
 RUN apt-get -y install emacs
 
+#
+# Install parse CLI
+#
+RUN curl -s https://www.parse.com/downloads/cloud_code/installer.sh | /bin/bash
+
 # Create a user
 RUN adduser codio --disabled-password
 

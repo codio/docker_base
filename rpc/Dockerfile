@@ -1,4 +1,5 @@
 # DOCKER-VERSION 0.5.3
+# DOCKER-VERSION 0.5.3
 FROM ubuntu:12.04
 MAINTAINER Codio "info@codio.com"
 
@@ -24,6 +25,12 @@ RUN npm install -g jitsu@0.13.3
 RUN npm install -g snr@0.2.2
 RUN npm install -g less@1.4.0
 RUN gem install --no-rdoc --no-ri sass
+
+#
+# Install parse CLI
+#
+RUN curl -s https://www.parse.com/downloads/cloud_code/installer.sh | /bin/bash
+
 ADD ./etc/default/gitconfig /etc/gitconfig
 
 # Clean unwanted software
