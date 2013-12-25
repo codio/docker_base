@@ -18,7 +18,7 @@ RUN apt-get -y update
 RUN apt-get -y install git nodejs ruby2.0 ruby2.0-dev mercurial
 
 # Create a user
-RUN adduser codio --disabled-password
+RUN adduser codio --disabled-password --uid 1002
 
 RUN npm install -g bower@1.2.7
 RUN npm install -g jitsu@0.13.3
