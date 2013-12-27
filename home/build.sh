@@ -5,7 +5,7 @@ RUN="docker run -rm -u codio -w /home/codio -v ${BASE_HOME}:/home/codio:rw -i -t
 
 rm -rf ${BASE_HOME}
 mkdir -p ${BASE_HOME}
-chown 1002 ${BASE_HOME}
+chown 1100 ${BASE_HOME}
 
 docker build -t base ../base/
 $RUN touch /home/codio/.profile

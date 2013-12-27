@@ -28,7 +28,7 @@ RUN apt-get -y install emacs
 RUN curl -s https://www.parse.com/downloads/cloud_code/installer.sh | /bin/bash
 
 # Create a user
-RUN adduser codio --disabled-password --uid 1002
+RUN adduser codio --disabled-password --uid 1100
 
 ADD ./init/codio.conf /etc/init/codio.conf
 ADD ./codio-start /usr/sbin/codio-start
