@@ -43,6 +43,8 @@ RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start
 RUN apt-get -y purge python-software-properties
 RUN apt-get -y autoremove
 
+RUN echo "LC_ALL=C" >> /etc/environment
+
 # environment variables
 ENV HOME /home/codio
 
