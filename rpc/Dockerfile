@@ -36,7 +36,7 @@ ADD ./etc/default/gitconfig /etc/gitconfig
 # Clean unwanted software
 RUN apt-get -y purge python-software-properties
 RUN apt-get -y autoremove
-
+RUN mkdir /usr/share/rpc
 # environment variables
 ENV HOME /home/codio
 ENV PATH /usr/share/rpc:$PATH
