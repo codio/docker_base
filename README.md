@@ -1,6 +1,12 @@
-Docker containers image builders
+# Docker containers image builders
 
-Check  Readme.md in folder for details
+Check the `Readme.md` in the individual folders for more details.
+
+Fast install for vagrant:
+
+```bash
+$ ./install.sh
+```
 
 ## Base
 
