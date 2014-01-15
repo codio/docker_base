@@ -3,8 +3,7 @@ set -e
 BASE_HOME="/mnt/data/base-home"
 RUN="docker run -rm -u codio -w /home/codio -v ${BASE_HOME}:/home/codio:rw -i -t base"
 
-rm -rf ${BASE_HOME}/*
-rm -rf ${BASE_HOME}/.*
+find ${BASE_HOME}/* -delete
 mkdir -p ${BASE_HOME}
 chown 1100 ${BASE_HOME}
 
