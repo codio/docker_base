@@ -11,6 +11,7 @@ nvm alias default 0.10
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+echo 'cd workspace/' >> ~/.bash_profile
 echo 'tlsv1' > ~/.curlrc
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 export PATH="$HOME/.rbenv/bin:$PATH"
