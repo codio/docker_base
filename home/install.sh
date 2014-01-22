@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+mkdir -p $HOME/.ssh
 
 # node by nvm install
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
