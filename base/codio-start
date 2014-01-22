@@ -2,5 +2,5 @@
 
 start ssh
 
-#/etc/init.d/nginx start
-#/etc/init.d/mongodb start
+/etc/init.d/nginx start
+/etc/init.d/mongodb start
