@@ -7,7 +7,7 @@ mkdir -p ${BASE_HOME}
 find ${BASE_HOME} -mindepth 1 -delete
 chown 1100 ${BASE_HOME}
 
-docker build -t base ../base/
+#docker build -t base ../base/
 $RUN touch /home/codio/.profile
 cp .bash_profile ${BASE_HOME}
 chown 1100 ${BASE_HOME}/.bash_profile
