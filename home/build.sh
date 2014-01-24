@@ -16,8 +16,6 @@ chmod +x install.sh
 cp install.sh ${BASE_HOME}/
 
 $RUN ./install.sh
-$RUN mkdir -p /home/codio/var/log/nginx /home/codio/var/lib/mongodb /home/codio/var/log/mongodb /home/codio/etc/nginx/sites-enabled
-cp -r etc ${BASE_HOME}/
 
 rm ${BASE_HOME}/install.sh
 

@@ -11,30 +11,19 @@ RUN apt-get -y install dialog curl wget man vim nano openssh-server python-softw
 
 # ppas
 RUN apt-add-repository -y ppa:git-core/ppa
-RUN apt-add-repository -y ppa:nginx/stable
-#mongo ppa
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
-RUN echo 'deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen' >  /etc/apt/sources.list.d/mongodb.list
+
 
 RUN apt-get -y update
-RUN apt-get -y install git nginx mongodb-10gen
+RUN apt-get -y install git
 
 # extra packages
 RUN apt-get -y install emacs
-
-#
-# Install parse CLI
-#
-RUN curl -s https://www.parse.com/downloads/cloud_code/installer.sh | /bin/bash
 
 # Create a user
 RUN adduser codio --disabled-password --uid 1100
 
 ADD ./init/codio.conf /etc/init/codio.conf
 ADD ./codio-start /usr/sbin/codio-start
-ADD ./etc/nginx/nginx.conf /etc/nginx/nginx.conf
-ADD ./etc/mongodb.conf /etc/mongodb.conf
-ADD ./etc/default/mongodb /etc/default/mongodb
 ADD ./etc/default/gitconfig /etc/gitconfig
 
 RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start

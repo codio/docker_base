@@ -2,5 +2,6 @@
 
 start ssh
 
-/etc/init.d/nginx start
-/etc/init.d/mongodb start
+if [ -f /home/codio/startup.sh ]; then
+  sudo -u codio "bash /home/codio/startup.sh"
+fi
