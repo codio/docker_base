@@ -16,7 +16,7 @@ echo 'cd workspace/' >> ~/.bash_profile
 echo 'tlsv1' > ~/.curlrc
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 export PATH="$HOME/.rbenv/bin:$PATH"
-rbenv init -
+eval "$(rbenv init -)"
 rbenv install 2.0.0-p353
 rbenv global 2.0.0-p353
 ruby -e "$(curl -fsSL https://raw.github.com/action-io/autoparts/master/setup.rb)"
