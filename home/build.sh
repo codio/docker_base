@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 BASE_HOME="/mnt/data/base-home"
-RUN="docker run -rm -u codio -w /home/codio -v ${BASE_HOME}:/home/codio:rw -i -t base"
+RUN="docker run -rm=true -u codio -w /home/codio -v ${BASE_HOME}:/home/codio:rw -i -t base"
 
 mkdir -p ${BASE_HOME}
 find ${BASE_HOME} -mindepth 1 -delete
