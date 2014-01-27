@@ -8,7 +8,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe" > /etc/apt/sour
 
 # Base softwre install
 RUN apt-get -y update
-RUN apt-get -y install dialog curl wget man vim nano python-software-properties build-essential rsync
+RUN apt-get -y install dialog curl wget man vim nano python-software-properties build-essential rsync sshpass
 
 # ppas
 RUN apt-add-repository -y ppa:git-core/ppa
