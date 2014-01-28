@@ -3,5 +3,5 @@
 start ssh
 
 if [ -f /home/codio/startup.sh ]; then
-  sudo -u codio "bash /home/codio/startup.sh"
+  su codio -l -c "bash /home/codio/startup.sh"
 fi
