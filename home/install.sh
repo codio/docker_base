@@ -19,4 +19,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 rbenv install 2.0.0-p353
 rbenv global 2.0.0-p353
-ruby -e "$(curl -fsSL https://raw.github.com/codio/autoparts/master/setup.rb)"
+ruby -e "$(curl -fsSL https://raw.github.com/codio/boxparts/master/setup.rb)"
