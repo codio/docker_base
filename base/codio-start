@@ -3,5 +3,6 @@
 start ssh
 
 if [ -f /home/codio/startup.sh ]; then
+  su codio -l -c "parts update"
   su codio -l -c "bash /home/codio/startup.sh"
 fi
