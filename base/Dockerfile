@@ -39,6 +39,7 @@ RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start
 
 RUN echo "LC_ALL=C" >> /etc/environment
 RUN rm /etc/motd
+RUN rm /etc/legal
 
 # environment variables
 ENV HOME /home/codio
