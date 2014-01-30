@@ -4,7 +4,7 @@ FROM ubuntu:12.04
 MAINTAINER Codio "info@codio.com"
 
 # fix deps for node
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe" > /etc/apt/sources.list.d/universe.list
+#RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe" > /etc/apt/sources.list.d/universe.list
 
 # Base softwre install
 RUN apt-get -y update
