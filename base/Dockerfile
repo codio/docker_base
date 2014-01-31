@@ -41,6 +41,8 @@ RUN echo "LC_ALL=C" >> /etc/environment
 RUN rm /etc/motd
 RUN rm /etc/legal
 
+RUN dpkg-divert --remove /sbin/initctl && rm /sbin/initctl && mv /sbin/initctl.distrib /sbin/initctl
+
 # environment variables
 ENV HOME /home/codio
 
