@@ -46,5 +46,6 @@ RUN dpkg-divert --remove /sbin/initctl && rm /sbin/initctl && mv /sbin/initctl.d
 
 # environment variables
 ENV HOME /home/codio
+RUN apt-get install unzip
 
 CMD ["/sbin/init"]
