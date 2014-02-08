@@ -46,6 +46,6 @@ RUN dpkg-divert --remove /sbin/initctl && rm /sbin/initctl && mv /sbin/initctl.d
 
 # environment variables
 ENV HOME /home/codio
-RUN apt-get install unzip
+RUN apt-get -y install unzip zsh zsh-lovers bzip2 p7zip-full
 
 CMD ["/sbin/init"]
