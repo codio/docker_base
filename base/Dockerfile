@@ -47,5 +47,5 @@ RUN dpkg-divert --remove /sbin/initctl && rm /sbin/initctl && mv /sbin/initctl.d
 # environment variables
 ENV HOME /home/codio
 RUN apt-get -y install unzip zsh zsh-lovers bzip2 p7zip-full
-
+RUN rm /etc/init/plymouth* /etc/init/mountall*
 CMD ["/sbin/init"]
