@@ -8,12 +8,12 @@ Don't have openssh in it, commands should be executes as they are with user dire
 
 ## Build
 ``` bash
-docker build -t base_rpc .
+docker build -t codio/base_rpc .
 ```
 
 ## Usage exmaple
 ``` bash
-docker run -u codio -w="/home/codio" -i -t base_rpc:latest bower install lodash
+docker run -u codio -w="/home/codio" -i -t codio/base_rpc:latest bower install lodash
 ```
 
 Home directory is pointed to /home/codio

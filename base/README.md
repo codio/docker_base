@@ -8,7 +8,7 @@ Draft documentation:
 
 ## Build base Image
 ``` bash
-sudo docker build -t base .
+sudo docker build -t codio/base .
 ```
 
 ## Container create
@@ -47,6 +47,6 @@ sudo mount -t aufs -o dirs=<user_home_dir>:<base_home_dir> none <result_home_dir
 
 ```bash
 sudo mount -t aufs -o dirs=<user_home_dir>:<base_home_dir> none <result_home_dir>
-sudo docker run -v <result_home_dir>:/home/codio:rw -v <project_files_dir>:/home/codio/workspace:rw -d base:latest /sbin/init
+sudo docker run -v <result_home_dir>:/home/codio:rw -v <project_files_dir>:/home/codio/workspace:rw -d codio/base:latest /sbin/init
 ```
 Home directory is pointed to /home/codio
