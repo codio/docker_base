@@ -18,8 +18,8 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 rbenv install 2.0.0-p353
-#rbenv install 1.9.3-p484
-#rbenv install 2.1.0
+rbenv install 1.9.3-p484
+rbenv install 2.1.0
 rbenv global 2.0.0-p353
 gem install bundle
 ruby -e "$(curl -fsSL https://raw.github.com/codio/boxparts/master/setup.rb)"
