@@ -48,4 +48,8 @@ RUN dpkg-divert --remove /sbin/initctl && rm /sbin/initctl && mv /sbin/initctl.d
 ENV HOME /home/codio
 RUN apt-get -y install unzip zsh zsh-lovers bzip2 p7zip-full
 RUN rm /etc/init/plymouth* /etc/init/mountall*
+
+RUN apt-get -y install libnss3 libicu48 libicu-dev libmhash-dev libmhash2 libmcrypt-dev libmcrypt4 gettext libgettextpo-dev libgettextpo0 libfreetype6 libfreetype6-dev libpng12-0 libpng12-dev libjpeg-dev libjpeg8-dev libjpeg8  libgd2-xpm-dev libgd-tools libxpm4 libbz2-dev libreadline-dev
+RUN apt-get -y install libc-client2007e-dev libssh2-1-dev
+
 CMD ["/sbin/init"]
