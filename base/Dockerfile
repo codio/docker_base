@@ -38,7 +38,12 @@ ADD ./etc/box /etc/box
 
 RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start
 
-RUN echo "LC_ALL=C" >> /etc/environment
+#RUN echo "LC_ALL=C" >> /etc/environment
+#work with locales
+
+RUN cp /usr/share/i18n/SUPPORTED  /var/lib/locales/supported.d/local
+RUN dpkg-reconfigure locales
+RUN echo "LANG=en_US.UTF-8" > /etc/default/locale
 RUN rm /etc/motd
 RUN rm /etc/legal
 
