@@ -15,6 +15,7 @@ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 echo 'cd $HOME/workspace/' >> ~/.bash_profile
 echo 'tlsv1' > ~/.curlrc
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 rbenv install 2.0.0-p353
