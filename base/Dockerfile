@@ -34,7 +34,7 @@ ADD ./etc/box /etc/box
 
 RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start
 
-
+RUN apt-get install -y gfortran gfortran-multilib libmad0-dev
 
 # environment variables
 ENV HOME /home/codio
