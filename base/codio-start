@@ -2,14 +2,4 @@
 
 start ssh
 
-# update parts
-su codio -l -c "parts update"
-
-#startup from home
-if [ -f /home/codio/startup.sh ]; then
-  su codio -l -c "bash /home/codio/startup.sh"
-fi
-#startup from project workspace
-if [ -f /home/codio/workspace/startup.sh ]; then
-  su codio -l -c "bash /home/codio/workspace/startup.sh"
-fi
+su codio -c "/usr/sbin/codio-startup" > /dev/null 2> /dev/null &
