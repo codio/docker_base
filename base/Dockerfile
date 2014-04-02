@@ -29,10 +29,11 @@ RUN adduser codio --disabled-password --uid 1100
 
 ADD ./init/codio.conf /etc/init/codio.conf
 ADD ./codio-start /usr/sbin/codio-start
+ADD ./codio-startup /usr/sbin/codio-startup
 ADD ./etc/default/gitconfig /etc/gitconfig
 ADD ./etc/box /etc/box
 
-RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start
+RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start && chmod +x /usr/sbin/codio-startup
 
 RUN apt-get install -y gfortran gfortran-multilib libmad0-dev
 
