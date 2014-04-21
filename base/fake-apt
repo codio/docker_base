@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "apt-get and aptitude are unavailable on Codio and should not be used. You can instead install packages using Box Parts. Please refer to the Codio documentation and search for 'box parts'"
+
+exit 1

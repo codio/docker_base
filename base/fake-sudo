@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "sudo access is not allowed on Codio Boxes. You can install languages, databases and other components using Box Parts. Please refer to the Codio documentation and search for 'box parts'"
+
+exit 1;

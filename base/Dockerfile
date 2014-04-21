@@ -22,7 +22,8 @@ RUN echo 'base software and libraries' && \
     rm /etc/motd && \
     rm /etc/legal && \
     rm /etc/init/plymouth* /etc/init/mountall* && \
-    dpkg-divert --remove /sbin/initctl && rm /sbin/initctl && mv /sbin/initctl.distrib /sbin/initctl
+    dpkg-divert --remove /sbin/initctl && rm /sbin/initctl && mv /sbin/initctl.distrib /sbin/initctl && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Create a user
 RUN adduser codio --disabled-password --uid 1100
@@ -39,5 +40,14 @@ RUN apt-get install -y gfortran gfortran-multilib libmad0-dev
 
 # environment variables
 ENV HOME /home/codio
+RUN dpkg-divert --add --rename --divert /bin/su.codio /bin/su && dpkg-divert --add --rename --divert /usr/bin/sudo.codio /usr/bin/sudo && dpkg-divert --add --rename --divert /usr/bin/apt-get.codio /usr/bin/apt-get && dpkg-divert --add --rename --divert /usr/bin/apt-cache.codio /usr/bin/apt-cache
+
+ADD ./fake-apt /usr/bin/apt-get
+ADD ./fake-apt /usr/bin/apt-cache
+ADD ./fake-apt /usr/bin/aptitude
+
+ADD ./fake-sudo /usr/bin/sudo
+ADD ./fake-sudo /bin/su
+RUN chmod +x /usr/bin/apt-get /usr/bin/apt-cache /usr/bin/aptitude /usr/bin/sudo /bin/su
 
 CMD ["/sbin/init"]
