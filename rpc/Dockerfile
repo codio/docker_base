@@ -1,5 +1,4 @@
 # DOCKER-VERSION 0.5.3
-# DOCKER-VERSION 0.5.3
 FROM ubuntu:12.04
 MAINTAINER Codio "info@codio.com"
 
@@ -8,7 +7,7 @@ MAINTAINER Codio "info@codio.com"
 
 # Base softwre install
 RUN apt-get -y update
-RUN apt-get -y install dialog curl wget man vim nano python-software-properties build-essential rsync sshpass
+RUN apt-get -y install dialog curl wget man python-software-properties build-essential rsync sshpass
 
 # ppas
 RUN apt-add-repository -y ppa:git-core/ppa
@@ -22,7 +21,7 @@ RUN adduser codio --disabled-password --uid 1100
 
 RUN npm install -g bower@1.2.7
 RUN npm install -g jitsu
-RUN npm install -g snr@0.2.2
+RUN npm install -g snr@0.2.3
 RUN npm install -g less@1.4.0
 RUN gem install --no-rdoc --no-ri sass
 
