@@ -2,4 +2,4 @@
 
 start ssh
 
-su codio -c "/usr/sbin/codio-startup" > /dev/null 2> /dev/null &
+su.codio codio -c "/usr/sbin/codio-startup" > /tmp/startup.log 2> /tmp/startup.err.log
