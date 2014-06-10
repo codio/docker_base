@@ -36,10 +36,12 @@ ADD ./etc/box /etc/box
 
 RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start && chmod +x /usr/sbin/codio-startup
 
-RUN apt-add-repository -y ppa:ubuntu-toolchain-r/test && apt-get -y update && apt-get -y install gcc-4.8
+RUN apt-add-repository -y ppa:ubuntu-toolchain-r/test && apt-get -y update && apt-get -y install gcc-4.8 g++-4.8
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
-RUN apt-get install -y telnet net-tools iputils-ping traceroute gobjc-4.8
+
+RUN apt-get install -y telnet net-tools iputils-ping traceroute gobjc gobjc-4.8 gnustep gnustep-make gnustep-common gnustep-devel gobjc++-4.8 gobjc++-4.6
 
 # environment variables
 ENV HOME /home/codio
