@@ -36,6 +36,11 @@ ADD ./etc/box /etc/box
 
 RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start && chmod +x /usr/sbin/codio-startup
 
+RUN apt-add-repository -y ppa:ubuntu-toolchain-r/test && apt-get -y update && apt-get -y install gcc-4.8
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+
+RUN apt-get install -y telnet net-tools iputils-ping traceroute gobjc-4.8
+
 # environment variables
 ENV HOME /home/codio
 RUN dpkg-divert --add --rename --divert /bin/su.codio /bin/su && dpkg-divert --add --rename --divert /usr/bin/sudo.codio /usr/bin/sudo && dpkg-divert --add --rename --divert /usr/bin/apt-get.codio /usr/bin/apt-get && dpkg-divert --add --rename --divert /usr/bin/apt-cache.codio /usr/bin/apt-cache
@@ -46,6 +51,9 @@ ADD ./fake-apt /usr/bin/aptitude
 
 ADD ./fake-sudo /usr/bin/sudo
 ADD ./fake-sudo /bin/su
+
+ADD ./etc/ld.conf /etc/ld.so.conf.d/codio_part.sconf
+
 RUN chmod +x /usr/bin/apt-get /usr/bin/apt-cache /usr/bin/aptitude /usr/bin/sudo /bin/su
 
 RUN echo "PasswordAuthentication no" >>  /etc/ssh/sshd_config
