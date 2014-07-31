@@ -21,7 +21,7 @@ RUN adduser codio --disabled-password --uid 1100
 
 RUN npm install -g bower@1.2.7
 RUN npm install -g jitsu
-RUN npm install -g snr@0.2.3
+RUN npm install -g git://github.com/codio/snr.git
 RUN npm install -g less@1.7.1
 RUN gem install --no-rdoc --no-ri sass
 

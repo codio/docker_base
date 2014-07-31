@@ -3,7 +3,7 @@ set -e
 mkdir -p $HOME/.ssh
 
 # node by nvm install
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+curl https://raw.githubusercontent.com/creationix/nvm/v0.10.0/install.sh | bash
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 nvm install 0.10
 nvm alias default 0.10
@@ -24,3 +24,6 @@ rbenv install 2.1.0
 rbenv global 2.0.0-p353
 gem install bundle
 ruby -e "$(curl -fsSL https://raw.github.com/codio/boxparts/master/setup.rb)"
+
+npm install -g versal-sdk
+rm -rf $HOME/.bash_history

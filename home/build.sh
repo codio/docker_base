@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 BASE_HOME="/tmp/base-home-tmp"
-RUN="docker run -rm=true -w /home/codio -v ${BASE_HOME}:/home/codio:rw codio/base "
+RUN="docker run --rm -w /home/codio -v ${BASE_HOME}:/home/codio:rw codio/base "
 
 if [ -d "${BASE_HOME}" ]; then
     rm -rf ${BASE_HOME}
@@ -16,7 +16,7 @@ sudo chown 1100 ${BASE_HOME}/.bash_profile
 chmod +x install.sh
 cp install.sh ${BASE_HOME}/
 
-$RUN su -l codio -c "/bin/bash ./install.sh"
+$RUN su.codio -l codio -c "/bin/bash ./install.sh"
 
 rm ${BASE_HOME}/install.sh
 
