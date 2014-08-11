@@ -2,4 +2,4 @@
 FROM codio/base_rpc:latest
 MAINTAINER Codio "info@codio.com"
 
-RUN npm install -g https://github.com/Versal/sdk/tarball/feature/codio-init.zip
+RUN npm install -g git://github.com/Versal/sdk
