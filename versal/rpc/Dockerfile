@@ -2,4 +2,4 @@
 FROM codio/base_rpc:latest
 MAINTAINER Codio "info@codio.com"
 
-RUN npm install -g git://github.com/Versal/sdk
+RUN npm install -g git://github.com/Versal/sdk#codio-bower-install
