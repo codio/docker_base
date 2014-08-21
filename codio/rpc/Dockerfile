@@ -19,7 +19,7 @@ RUN apt-get -y install git nodejs ruby2.0 ruby2.0-dev mercurial
 # Create a user
 RUN adduser codio --disabled-password --uid 1100
 
-RUN npm install -g bower@1.2.7
+RUN npm install -g bower
 RUN npm install -g jitsu
 RUN npm install -g git://github.com/codio/snr.git
 RUN npm install -g less@1.7.1
@@ -39,3 +39,5 @@ RUN mkdir /usr/share/rpc
 # environment variables
 ENV HOME /home/codio
 ENV PATH /usr/share/rpc:$PATH
+
+RUN gem install --no-rdoc --no-ri sass

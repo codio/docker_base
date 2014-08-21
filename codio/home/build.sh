@@ -1,5 +1,12 @@
 #!/bin/bash
 set -e
+
+if [[ $# -ne 1 ]]; then
+    echo "illegal number of parameters, please pass version for build image to upload. Ex ./build.sh 8"
+    exit 1
+fi
+
+VERSION=$1
 BASE_HOME="/tmp/base-home-tmp"
 RUN="docker run --rm -w /home/codio -v ${BASE_HOME}:/home/codio:rw codio/base "
 
@@ -21,5 +28,8 @@ $RUN su.codio -l codio -c "/bin/bash ./install.sh"
 rm ${BASE_HOME}/install.sh
 
 mkdir ${BASE_HOME}/workspace && chown 1100 ${BASE_HOME}/workspace
-mksquashfs ${BASE_HOME} base-home.sqsh
+mksquashfs ${BASE_HOME} /tmp/base-home.sqsh
+VERSAL_HOME_FILE=base-home-v${VERSION}.sqsh
+s3cmd put --acl-public --guess-mime-type /tmp/base-home.sqsh s3://codio-base-home-images/${VERSAL_HOME_FILE}
+
 
