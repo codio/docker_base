@@ -4,7 +4,8 @@ set -e
 
 SCRIPT=`realpath $0`
 SCRIPTPATH=`dirname $SCRIPT`
-IMAGE=codio/versal_rpc
+IMAGE="codio/versal_rpc"
 
-docker build ${IMAGE} $SCRIPTPATH/rpc
+echo building ${IMAGE} from ${SCRIPTPATH}/rpc
+docker build -t ${IMAGE} ${SCRIPTPATH}/rpc
 docker push ${IMAGE}

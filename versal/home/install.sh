@@ -8,7 +8,7 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.parts/autoparts/bin:$PATH"
 eval "$(parts init -)"
 
-npm install -g git://github.com/Versal/sdk#codio-bower-install
+npm install -g git://github.com/Versal/sdk
 npm install -g bower
 parts update
 parts install zip
