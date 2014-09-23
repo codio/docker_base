@@ -43,6 +43,26 @@ RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 RUN apt-get install -y telnet net-tools iputils-ping traceroute gobjc gobjc-4.8 gnustep gnustep-make gnustep-common gnustep-devel gobjc++-4.8 gobjc++-4.6
 
+# RPC ---- start
+RUN apt-add-repository -y ppa:chris-lea/node.js
+RUN add-apt-repository -y ppa:brightbox/ruby-ng-experimental
+RUN apt-get -y update
+RUN apt-get -y install git nodejs ruby2.0 ruby2.0-dev mercurial
+
+RUN npm install -g bower
+RUN npm install -g jitsu
+RUN npm install -g git://github.com/codio/snr.git
+RUN npm install -g less@1.7.1
+RUN gem install --no-rdoc --no-ri sass
+RUN curl -s https://www.parse.com/downloads/cloud_code/installer.sh | /bin/bash
+
+RUN apt-get -y autoremove
+RUN mkdir /usr/share/rpc
+# environment variables
+ENV PATH /usr/share/rpc:$PATH
+
+# RPC ---- end
+
 # environment variables
 ENV HOME /home/codio
 RUN dpkg-divert --add --rename --divert /bin/su.codio /bin/su && dpkg-divert --add --rename --divert /usr/bin/sudo.codio /usr/bin/sudo && dpkg-divert --add --rename --divert /usr/bin/apt-get.codio /usr/bin/apt-get && dpkg-divert --add --rename --divert /usr/bin/apt-cache.codio /usr/bin/apt-cache
