@@ -10,6 +10,7 @@ export PATH="$HOME/.parts/autoparts/bin:$PATH"
 eval "$(parts init -)"
 
 parts update
+parts autostart
 
 #startup from home
 if [ -f /home/codio/startup.sh ]; then
