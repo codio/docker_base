@@ -78,6 +78,7 @@ ADD ./etc/ld.conf /etc/ld.so.conf.d/codio_part.sconf
 
 RUN chmod +x /usr/bin/apt-get /usr/bin/apt-cache /usr/bin/aptitude /usr/bin/sudo /bin/su
 
-RUN echo "PasswordAuthentication no" >>  /etc/ssh/sshd_config
+RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+RUN echo "AUTOPARTS_NO_AUTOUPDATE=1" >> /etc/environment
 
 CMD ["/sbin/init"]
