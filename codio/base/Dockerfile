@@ -29,6 +29,8 @@ RUN echo 'base software and libraries' && \
 RUN adduser codio --disabled-password --uid 1100
 
 ADD ./init/codio.conf /etc/init/codio.conf
+ADD ./init/ssh.conf /etc/init/ssh.conf
+
 ADD ./codio-start /usr/sbin/codio-start
 ADD ./codio-startup /usr/sbin/codio-startup
 ADD ./etc/default/gitconfig /etc/gitconfig
