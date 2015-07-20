@@ -80,6 +80,6 @@ RUN chmod +x /usr/bin/apt-get /usr/bin/apt-cache /usr/bin/aptitude /usr/bin/sudo
 
 RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 RUN echo "AUTOPARTS_NO_AUTOUPDATE=1" >> /etc/environment
-RUN echo "export CODIO_HOSTNAME=`cat /etc/hostname`" > /etc/profile.d/codio.sh && RUN echo "export CODIO_BOX_DOMAIN=$CODIO_HOSTNAME.codio.io" >> /etc/profile.d/codio.sh && chmod +x /etc/profile.d/codio.sh"
+RUN echo "export CODIO_HOSTNAME=\`cat /etc/hostname\`" > /etc/profile.d/codio.sh &&  echo "export CODIO_BOX_DOMAIN=\$CODIO_HOSTNAME.codio.io" >> /etc/profile.d/codio.sh && chmod +x /etc/profile.d/codio.sh
 
 CMD ["/sbin/init"]
