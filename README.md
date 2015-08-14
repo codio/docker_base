@@ -1,3 +1,5 @@
+!!!! IMPORTANT do not build the images, update the latest cidui/base instead
+
 # Docker containers image builders
 
 Check the `Readme.md` in the individual folders for more details.

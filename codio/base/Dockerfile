@@ -8,7 +8,7 @@ MAINTAINER Codio "info@codio.com"
 # Base software install
 RUN echo 'base software and libraries' && \
     apt-get -y update && \
-    apt-get -y install dialog curl wget man vim nano openssh-server python-software-properties build-essential rsync libssl1.0.0 libssl-dev libpcre3 libpcre3-dev libxml2 libxml2-dev openssl libcurl4-openssl-dev postgresql-server-dev-9.1 libreadline-dev s3cmd libevent1-dev libevent-1.4-2 libncurses5-dev autotools-dev automake pkg-config zlib1g-dev liblzma-dev libxslt-dev libgmp3c2 libgmp3-dev libgl1-mesa-dev libglc-dev freeglut3-dev libedit-dev libglw1-mesa libglw1-mesa-dev unzip zsh zsh-lovers bzip2 p7zip-full libnss3 libicu48 libicu-dev libmhash-dev libmhash2 libmcrypt-dev libmcrypt4 gettext libgettextpo-dev libgettextpo0 libfreetype6 libfreetype6-dev libpng12-0 libpng12-dev libjpeg-dev libjpeg8-dev libjpeg8  libgd2-xpm-dev libgd-tools libxpm4 libbz2-dev libreadline-dev libc-client2007e-dev libssh2-1-dev python-dev emacs libffi-dev libglib2.0-dev gfortran gfortran-multilib libmad0-dev sshpass && \
+    apt-get -y install dialog curl wget man vim nano openssh-server python-software-properties build-essential rsync libssl1.0.0 libssl-dev libpcre3 libpcre3-dev libxml2 libxml2-dev openssl libcurl4-openssl-dev postgresql-server-dev-9.1 libreadline-dev s3cmd libevent1-dev libevent-1.4-2 libncurses5-dev autotools-dev automake pkg-config zlib1g-dev liblzma-dev libxslt-dev libgmp3c2 libgmp3-dev libgl1-mesa-dev libglc-dev freeglut3-dev libedit-dev libglw1-mesa libglw1-mesa-dev unzip zsh zsh-lovers bzip2 p7zip-full libnss3 libicu48 libicu-dev libmhash-dev libmhash2 libmcrypt-dev libmcrypt4 gettext libgettextpo-dev libgettextpo0 libfreetype6 libfreetype6-dev libpng12-0 libpng12-dev libjpeg-dev libjpeg8-dev libjpeg8  libgd2-xpm-dev libgd-tools libxpm4 libbz2-dev libreadline-dev libc-client2007e-dev libssh2-1-dev python-dev emacs libffi-dev libglib2.0-dev gfortran gfortran-multilib libmad0-dev sshpass xvfb x11vnc tk-dev xfonts-\* && \
     echo 'extra repo'&& \
     apt-add-repository -y ppa:git-core/ppa&& \
     apt-add-repository -y ppa:webupd8team/java&& \
@@ -33,6 +33,7 @@ ADD ./codio-start /usr/sbin/codio-start
 ADD ./codio-startup /usr/sbin/codio-startup
 ADD ./etc/default/gitconfig /etc/gitconfig
 ADD ./etc/box /etc/box
+ADD ./etc/rc.xml /etc/xdg/openbox/rc.xml
 
 RUN chown root:root /usr/sbin/codio-start && chmod 700 /usr/sbin/codio-start && chmod +x /usr/sbin/codio-startup
 
